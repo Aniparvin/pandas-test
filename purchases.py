@@ -7,3 +7,5 @@ print(purchases)
 purchases.loc['June']
 df=pd.read_csv(r"C:\Users\az\Downloads\purchases(1).csv")
 print(df)
+df=pd.read_csv(r"C:\Users\az\Downloads\purchases(1).csv", index_col=0)
+print(df)
