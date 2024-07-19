@@ -11,3 +11,15 @@ df=pd.read_csv(r"C:\Users\az\Downloads\purchases(1).csv", index_col=0)
 print(df)
 df = pd.read_json(r"C:\Users\az\Downloads\purchases(1).json")
 print(df)
+
+import sqlite3
+con=sqlite3.connect(r"C:\Users\az\Downloads\database.db")
+df = pd.read_sql_query("SELECT * FROM purchases", con)
+df.set_index('index',inplace=True)
+print(df)
+df.to_csv('new_purchases.csv')
+
+df.to_json('new_purchases.json')
+
+df.to_sql('new_purchases', con)
+
