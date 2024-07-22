@@ -12,4 +12,7 @@ print(movies_df.columns)
 movies_df.rename(columns={'Runtime (Minutes)': 'Runtime', 'Revenue (Millions)': 'Revenue_millions'}, inplace=True)
 movies_df.columns = [col.lower() for col in movies_df]
 print(movies_df.columns)
-
+print(movies_df.isnull())
+print(movies_df.isnull().sum())
+print(movies_df.dropna())
+print(movies_df.dropna(axis=1))
