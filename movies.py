@@ -8,3 +8,8 @@ print(movies_df.info())
 print(movies_df.shape)
 dup=movies_df.add(movies_df)
 print(dup.shape)
+print(movies_df.columns)
+movies_df.rename(columns={'Runtime (Minutes)': 'Runtime', 'Revenue (Millions)': 'Revenue_millions'}, inplace=True)
+movies_df.columns = [col.lower() for col in movies_df]
+print(movies_df.columns)
+
