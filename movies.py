@@ -16,3 +16,15 @@ print(movies_df.isnull())
 print(movies_df.isnull().sum())
 print(movies_df.dropna())
 print(movies_df.dropna(axis=1))
+revenue = movies_df['revenue_millions']
+print(revenue.head())
+revenue_mean = revenue.mean()
+print(revenue_mean)
+print(revenue.fillna(revenue_mean,inplace=True))
+print(movies_df.isnull().sum())
+print(movies_df.describe())
+print(movies_df['genre'].describe())
+print(movies_df['genre'].value_counts().head(10))
+print(movies_df.corr())
+
+
