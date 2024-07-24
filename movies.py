@@ -24,7 +24,11 @@ print(revenue.fillna(revenue_mean,inplace=True))
 print(movies_df.isnull().sum())
 print(movies_df.describe())
 print(movies_df['genre'].describe())
+print(movies_df['genre'].value_counts())
 print(movies_df['genre'].value_counts().head(10))
-print(movies_df.corr())
+genre_col = movies_df[['genre']]
+print(type(genre_col))
+subset = movies_df[['genre', 'rating']]
+print(subset.head())
 
 
