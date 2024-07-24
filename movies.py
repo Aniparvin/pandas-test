@@ -49,4 +49,14 @@ print(movies_df[
     & (movies_df['rating'] > 8.0)
     & (movies_df['revenue_millions'] < movies_df['revenue_millions'].quantile(0.25))])
 
+def rating_function(x):
+    if x >= 8.0:
+        return "good"
+    else:
+        return "bad"
+movies_df["rating_category"] = movies_df["rating"].apply(rating_function)
+print(movies_df.head(2))
+movies_df["rating_category"] = movies_df["rating"].apply(lambda x: 'good' if x >= 8.0 else 'bad')
+print(movies_df.head(2))
+
 
