@@ -31,4 +31,13 @@ print(type(genre_col))
 subset = movies_df[['genre', 'rating']]
 print(subset.head())
 
+prom = movies_df.loc["Prometheus"]
+print(prom)
+prom = movies_df.iloc[1]
+print(prom)
+movie_subset = movies_df.loc['Prometheus':'Sing']
+movie_subset = movies_df.iloc[1:4]
+print(movie_subset)
+
+
 
