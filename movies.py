@@ -38,6 +38,15 @@ print(prom)
 movie_subset = movies_df.loc['Prometheus':'Sing']
 movie_subset = movies_df.iloc[1:4]
 print(movie_subset)
-
+condition = (movies_df['director'] == "Ridley Scott")
+print(condition.head())
+print(movies_df[movies_df['director'] == "Ridley Scott"])
+print(movies_df[movies_df['rating'] >= 8.6].head(3))
+print(movies_df[(movies_df['director'] == 'Christopher Nolan') | (movies_df['director'] == 'Ridley Scott')].head())
+movies_df[movies_df['director'].isin(['Christopher Nolan', 'Ridley Scott'])].head()
+print(movies_df[
+    ((movies_df['year'] >= 2005) & (movies_df['year'] <= 2010))
+    & (movies_df['rating'] > 8.0)
+    & (movies_df['revenue_millions'] < movies_df['revenue_millions'].quantile(0.25))])
 
 
