@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 movies_df=pd.read_csv(r"C:\\Users\\az\Downloads\\IMDB-Movie-Data.csv",index_col="Title")
 a=movies_df.head()
 print(a)
@@ -58,5 +60,18 @@ movies_df["rating_category"] = movies_df["rating"].apply(rating_function)
 print(movies_df.head(2))
 movies_df["rating_category"] = movies_df["rating"].apply(lambda x: 'good' if x >= 8.0 else 'bad')
 print(movies_df.head(2))
+print(plt.rcParams.update({'font.size': 20, 'figure.figsize': (10, 8)}))
+plt.scatter(x=movies_df['rating'],y=movies_df['revenue_millions'],color="red")
+plt.show()
 
+plt.hist(x=movies_df['rating'],bins=10)
+plt.title("Rating")
+plt.show()
+
+plt.boxplot(x=movies_df['rating'])
+plt.show()
+
+sns.boxplot(x='rating_category', y='revenue_millions', data=movies_df)
+plt.title("Boxplot of Revenue (in Millions) by Rating Category")
+plt.show()
 
